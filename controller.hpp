@@ -18,6 +18,7 @@ private:
     double dt;
 
     double prev_error;
+    double prev_measured_value;
     double integral;
     double min_integral, max_integral;
     double min_output, max_output;
