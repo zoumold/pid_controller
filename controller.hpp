@@ -3,7 +3,7 @@
 
 class PIDController {
 public:
-    PIDController(double kp, double ki, double kd, double dt);
+    PIDController(double kp, double ki, double kd);
 
     double compute_step(double desired_value, double measured_value);
     void reset();
@@ -20,8 +20,10 @@ private:
     double prev_error;
     double prev_measured_value;
     double integral;
-    double min_integral, max_integral;
-    double min_output, max_output;
+    double min_integral=-1.0, max_integral=1.0;
+    double min_output=1.0, max_output=1.0;
+
+    bool is_initialized;
 
 };
 
